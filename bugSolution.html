@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <div id="myDiv">
+    This is some text.
+  </div>
+  <script>
+    // Correct way to select an element and update its content
+    const myDiv = document.getElementById('myDiv');
+    myDiv.textContent = "<p>This is a paragraph.</p>";
+    myDiv.style.display = 'none';
+    // Correct way to select elements and update their styles using a loop
+    const elements = Array.from(document.getElementsByTagName('p'));
+    elements.forEach(element => element.style.color = 'red');
+  </script>
+</body>
+</html>
