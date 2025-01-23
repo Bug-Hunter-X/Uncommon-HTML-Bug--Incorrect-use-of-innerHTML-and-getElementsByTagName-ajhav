@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv">
+    This is some text.
+  </div>
+  <script>
+    // Incorrect way to select an element
+    document.getElementById('myDiv').innerHTML = "<p>This is a paragraph.</p>";
+    // This will cause an unexpected behavior when used in other functions
+    document.getElementById('myDiv').style.display = 'none';
+    // This will cause an error because it cannot be used on a HTMLCollection
+    var elements = document.getElementsByTagName('p');
+    elements.forEach(element => element.style.color = 'red');
+  </script>
+</body>
+</html>
